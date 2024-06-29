@@ -80,6 +80,20 @@
       scroll-behavior: smooth;
     }
 
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      height: 150px;
+      border-radius: 15px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00000096;
+    }
+
+
     a {
       text-decoration: none;
       color: black;
@@ -352,6 +366,8 @@
       font-weight: 500;
       font-size: 64px;
       line-height: 60px;
+      align-self:flex-start;
+      margin-top: 40px;
       letter-spacing: -0.08em;
     }
 
@@ -435,7 +451,7 @@
 
     .tip-amount input[type="radio"]:checked + .tip-label {
       background-color: white;
-      color: black;
+      color: rgb(0, 160, 16);
       border-color: black;
       padding: 2.5px 50px;
       border-radius: 30px;
@@ -507,7 +523,8 @@
       padding-bottom: 5px;
     }
 
-    #footer p , #footer h1{
+    #footer p,
+    #footer h1 {
       font-weight: 700;
       font-size: 15px;
       line-height: 10px;
@@ -518,9 +535,271 @@
 
     #footer h1 {
       font-size: 25px;
-      margin-top:60px;
+      margin-top: 60px;
+    }
+
+    .mobile-navbar , .mobile-drawer {
+      display: none;
+    }
+
+    @media screen and (max-width: 900px) {
+      .navbar-links,
+      .navbar-links a {
+        display: none;
+      }
+
+      .mobile-navbar , .mobile-drawer {
+        display: block;
+      }
+
+      .logo a,
+      .footer-logo a {
+        font-size: 55px;
+      }
+
+      .mobile-drawer {
+        position: fixed;
+        top: 0;
+        left: -400px;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        transition: left 0.3s ease;
+        z-index: 1000;
+      }
+
+      .mobile-drawer.open {
+        left: 0px;
+      }
+
+      .mobile-drawer nav {
+        padding: 20px;
+        margin: 5% auto;
+        align-items: center;
+      }
+
+      .mobile-drawer ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .mobile-drawer li {
+        margin-bottom: 50px;
+        text-align: center;
+      }
+
+      .mobile-drawer a {
+        font-size: 7vw;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        color: #000000;
+        text-decoration: none;
+      }
+
+      #drawer-close {
+        font-size: 30px;
+        margin-bottom: 0px;
+      }
+
+      .navbar {
+        margin-top: 40px;
+      }
+
+      .mobile-navbar i {
+        font-size: 40px;
+      }
+
+      .main-content {
+        width: 100%;
+        margin: 0px auto;
+        margin-top: 40px;
+      }
+
+      .main-img img {
+        width: 80%;
+      }
+
+      .main-text p {
+        width: 100%;
+        font-size: 40px;
+        line-height: 30px;
+      }
+
+      .tip-box {
+        width: 95%;
+      }
+
+      h1 {
+        font-size: 40px;
+        line-height: 40px;
+      }
+
+      h3 {
+        font-size: 30px;
+      }
+
+      .equipment-flex {
+        width: 90%;
+        justify-content: left;
+      }
+
+
+      .equipment-flex a {
+        width: auto;
+        font-size: 30px;
+      }
+      .equipment-flex img {
+        width: 45%;
+        height: auto;
+        margin-right: 50px;
+      }
+
+      .price-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .price-features, .price-features-2{
+        width: 80%;
+        margin: auto auto;
+        justify-content: center;
+      }
+
+      .price-features p , .price-features-2 p {
+        line-height: 30px;
+      }
+
+      .goal-bar {
+        width: 90%;
+      }
+
+      .tip-amount-flex {
+      justify-content: left;
+      width: 90%;
+
+    }
+
+    .tip-amount {
+      border: 2px solid #000000;
+      border-radius: 20px;
+      font-size: 20px;
+      line-height: 20px;
+      text-align: center;
+      letter-spacing: -0.08em;
+      padding: 5px 15px;
+      color: black;
+      margin-right: 10px;
+    }
+
+    .tip-amount input[type="radio"]:checked + .tip-label {
+      background-color: white;
+      color: black;
+      border-color: black;
+      padding: 0px 40px;
+      border-radius: 20px;
+    }
+
+    .custom-tip {
+      width: 90%;
+      
+    }
+
+    .custom-tip input[type="text"] {
+      border: 2px solid #000000;
+      border-radius: 20px;
+      font-size: 20px;
+      padding: 5px 15px;
+      width: 30%;
+      line-height: 20px;
+    }
+
+    button#donate , .join-waitlist-button {
+     margin-left: 5%; 
+     font-size: 30px;
+     margin-top:10px;
+     line-height: 40px;
+    }
+
+    .join-waitlist-button {
+      width: 60%;
+      margin: 10px auto;
+    }
+
+    .join-waitlist-button p {
+      font-size: 30px;
+    }
+
+    p#current-amount {
+      font-size: 40px;
+      line-height: 40px;
+    }
+
+
+    .goal-amount p {
+      font-size: 25px;
+    }
+
+    .step {
+      width: 80%;
+      margin: 60px auto;
+    }
+
+    .step h1 , .price-features p , .price-features-2 p {
+      font-size: 40px;
+    }
+
+    .step p {
+      font-size: 35px;
+      line-height: 40px;
+      margin-bottom: 0px;
+    }
+
+
     }
   </style>
 
   {% block content %} {% endblock %}
+
+
+  <script>
+    function toggleNavbar() {
+      var navbarLinks = document.getElementById("toggle_button");
+      if (navbarLinks.style.display === "flex") {
+        navbarLinks.style.display = "none";
+      } else {
+        navbarLinks.style.display = "flex";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const navbarMenu = document.querySelector(".toggle-button");
+      const drawerMenu = document.querySelector(".mobile-drawer");
+
+      navbarMenu.addEventListener("click", function (event) {
+        event.preventDefault();
+        drawerMenu.classList.toggle("open");
+      });
+
+      drawerMenu.addEventListener("click", function (event) {
+        // Close the menu when a link is clicked
+        if (event.target.tagName === "A") {
+          drawerMenu.classList.remove("open");
+        }
+      });
+      document.addEventListener("click", function (event) {
+        if (
+          !navbarMenu.contains(event.target) &&
+          !drawerMenu.contains(event.target)
+        ) {
+          drawerMenu.classList.remove("open");
+        }
+      });
+
+      drawerMenuButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        drawerMenu.classList.remove("open");
+      });
+    });
+  </script>
 </html>
