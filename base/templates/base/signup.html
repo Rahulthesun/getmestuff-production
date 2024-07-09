@@ -1,0 +1,18 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+    <section id="tool">
+        <h3>Signup</h3>
+    <div class="form-content">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button id="donate" type="submit">Signup</button>
+        </form>
+        <a href="{% url 'login' %}" style="text-decoration: underline; font-size: 20px;font-weight: 400;">Already have a Account ?? Login</a>
+    </div>
+    
+    </section>
+    
+
+{% endblock %}

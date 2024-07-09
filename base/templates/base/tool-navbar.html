@@ -1,0 +1,11 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<div class="tool-navbar">
+    <a href="{% url 'home' %}"><i class="fa-solid fa-house"></i></a>
+    <a href="{% url 'create_goal' %}"><i class="fa-regular fa-square-plus"></i></a>
+    <a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a>
+</div>
+
+{% endblock %}

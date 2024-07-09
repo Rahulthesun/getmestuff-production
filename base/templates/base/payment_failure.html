@@ -1,0 +1,11 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<section id="payment-success">
+    <img src="https://i.ibb.co/HVNcdTh/Untitled-design-35.png" alt="tick">
+    <h3>Payment Failed !!</h1>
+    <a href="{% url 'live_goal' live_goal_id %}" style="text-decoration: underline; font-weight: 600;">Redirect</a>
+</section>
+
+{% endblock %}

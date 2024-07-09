@@ -1,0 +1,46 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<section id="tool">
+   
+    {% include 'base/tool-navbar.html' %}
+    
+    {% for goal in goals %}
+
+    <a href="{% url 'live_goal' goal.id %}">
+        <div class="tip-box-preview">
+            <div class="tip-banner-preview">
+            </div>
+            <div class="tip-content-preview">
+                <div class="equipment-flex-preview">
+                    <img src="{{goal.item_image.url}}">
+                    <a href="{{goal.item_link}}" style="text-decoration-line: underline;" target="_blank">{{goal.item_name|slice:":7"}}{% if goal.item_name|length > 7 %}...{% endif %}</a>
+                </div>
+                <div class="goal-amount">
+                    <p id="current-amount">${{goal.funded_amount|floatformat}}</p>
+                    <p>/</p>
+                    <p>${{goal.item_price|floatformat}}</p>
+                </div>
+        
+                <div class="goal-bar">
+                    <div class="goal-progress" style="height: 100%;  width: {{goal.funded_percent}}%;"></div>
+                </div>
+    
+            </div>
+        </div>
+    </a>
+    
+
+
+    {% empty %}
+        <p>No Goals Yet , Create One</p>
+    {% endfor %}
+
+
+</section>
+
+    
+
+
+{% endblock %}

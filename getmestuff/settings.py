@@ -10,7 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import dj_database_url
 from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +29,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1","13.60.13.15" , "getmestuff.site" , "www.getmestuff.site"]
 
+PAYPAL_CLIENT_ID = 'AZN1XtT7BFQTqP9nWN6LDnNZLzK0Trux7wdSC3kEU0zXTK5HHOndatEBdUde5qRUQqvNOWJUPdF95iG0'
 
+PAYPAL_CLIENT_SECRET = 'EAD_qRm0E1guMZqYjU46qhRMMQ6vXVAny9HcpOx-KU0ubSj2CPA5DjC9A2Tm1lKErwGth60V78iL5ZCp'
+
+PAYPAL_TEST = False
+
+PAYPAL_RECEIVER_EMAIl = "wearaiofficial@gmail.com"
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'base.apps.BaseConfig'
+    'base.apps.BaseConfig',
+    'paypal.standard.ipn'
 ]
 
 MIDDLEWARE = [
@@ -81,6 +90,8 @@ DATABASES = {
     }
 }
 
+DATABASES['default'] = dj_database_url.parse("postgresql://getmestuff_django_postgresql_user:AdyQnOZzd0d1ePU0Mn9K125N1wbEcwHX@dpg-cq6dbraju9rs73e52dv0-a.oregon-postgres.render.com/getmestuff_django_postgresql")
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -122,3 +133,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MEDIA_URL = '/content/'
+
+MEDIA_ROOT = '/images/'
+
+
+LOGIN_URL = '/login/'

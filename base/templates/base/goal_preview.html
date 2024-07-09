@@ -1,0 +1,57 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+{% include 'base/tool-navbar.html' %}
+
+<div class="tip-box">
+    <div class="tip-banner">
+        <div class="tip-banner-name">
+            <img src="https://www.freepnglogos.com/uploads/twitch-twitch-tv-icon-logo-png-9.png">
+            <p>{{goal.channel_name}}</p>
+        </div>
+    </div>
+
+    <div class="tip-content">
+        <div class="equipment-flex">
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSq1YkfVzbBx6xN_TVCMfIAXYTpiq8JOfsEaljb-WOluP0IKGfDxm03jeKxRkYtChiBNNt5FGJiffLwTdEdI9oxoPQbwACxQ4MkDO0Po3GITY1QxEmrcbV6">
+            <a href="{{goal.item_link}}" style="text-decoration-line: underline;" target="_blank">{{goal.item_name}}</a>
+        </div>
+        <div class="goal-amount">
+            <p id="current-amount">${{goal.funded_amount|floatformat}}</p>
+            <p>/</p>
+            <p>${{goal.item_price|floatformat}}</p>
+        </div>
+
+        <div class="goal-bar">
+            <div class="goal-progress" style="height: 100%;  width: {{goal.funded_percent}}%;"></div>
+        </div>
+
+        <div class="tip-amount-flex">
+            <label class="tip-amount">
+                <input type="radio" name="tip" value="$5">
+                <span class="tip-label">$5.00</span>
+            </label>
+        
+            <label class="tip-amount">
+                <input type="radio" name="tip" value="$10">
+                <span class="tip-label">$10.00</span>
+            </label>
+        
+            <label class="tip-amount">
+                <input type="radio" name="tip" value="$40">
+                <span class="tip-label">$40.00</span>
+            </label>
+        </div>
+
+        <div class="custom-tip">
+            <p>Custom Tip</p>
+            <input type="text" placeholder="$100" value="$">
+        </div>
+
+        <button id="donate">Donate</button>
+    </div>
+
+</div>
+
+{% endblock %}

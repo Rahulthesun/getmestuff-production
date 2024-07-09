@@ -1,0 +1,12 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<section id="payment-success">
+    <img src="https://i.ibb.co/S5BPTvY/Untitled-design-34.png" alt="tick">
+    <h3>Payment Success</h1>
+    <p>Paid ${{supporter.donation_amount}} to {{supporter.goal.channel_name}}</p>
+    <a href="{{supporter.redirect_link}}" style="text-decoration: underline; font-weight: 600;">Redirect</a>
+</section>
+
+{% endblock %}

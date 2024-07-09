@@ -291,7 +291,7 @@
       text-align: left;
     }
 
-    .tip-box {
+    .tip-box ,.tip-box-preview{
       width: 60%;
       margin: auto auto;
       box-sizing: border-box;
@@ -302,14 +302,24 @@
       display: flex;
       flex-direction: column;
     }
+    .tip-box-preview {
+      width: 50%;
+      box-shadow: -6px 17px 33px 25px rgba(0, 0, 0, 0.12);
+      margin-bottom: 40px;
+    }
 
-    .tip-banner {
+
+    .tip-banner , .tip-banner-preview{
       width: 100%;
       height: 150px;
       margin-top: 0px;
       background: linear-gradient(90deg, #ba52fa 0%, #5790ff 100%);
       border-radius: 20px 20px 0px 0px;
       border: 4px solid #00000079;
+    }
+
+    .tip-banner-preview {
+      height: 30px;
     }
 
     .tip-banner-name {
@@ -337,7 +347,7 @@
       color: #ffffff;
     }
 
-    .tip-content {
+    .tip-content , .tip-content-preview{
       width: 100%;
       background-color: white;
       display: flex;
@@ -347,7 +357,11 @@
       border-radius: 0px 0px 20px 20px;
     }
 
-    .equipment-flex {
+    .tip-content-preview {
+      padding-bottom: 20px;
+    }
+
+    .equipment-flex , .equipment-flex-preview{
       width: 85%;
       margin: 40px auto;
       display: flex;
@@ -356,17 +370,20 @@
       align-items: center;
     }
 
-    .equipment-flex img {
-      width: 35%;
+    .equipment-flex img ,.equipment-flex-preview img{
+      width: 80%;
+      max-width: 300px;
       height: auto;
-      margin-right: 150px;
+      margin-left: 0px;
     }
 
-    .equipment-flex a {
+    .equipment-flex a , .equipment-flex-preview a{
+      margin-left: 50px;
+      width: 50%;
       font-weight: 500;
-      font-size: 64px;
-      line-height: 60px;
-      align-self:flex-start;
+      font-size: 45px;
+      line-height: 30px;
+      align-self:center;
       margin-top: 40px;
       letter-spacing: -0.08em;
     }
@@ -490,6 +507,7 @@
       transition: background 0.3s, border-color 0.3s;
     }
 
+
     button#donate {
       width: 40%;
       font-family: "Poppins", sans-serif;
@@ -538,9 +556,97 @@
       margin-top: 60px;
     }
 
+    .paypal-button{
+     width: 80%;
+     margin: auto auto;
+     font-size: 40px;
+     text-align: center;
+    }
+
     .mobile-navbar , .mobile-drawer {
       display: none;
     }
+    #payment-success {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    #payment-success p{
+      font-size: 20px;
+    } 
+    #payment-success img {
+      width: 20%;
+      margin: auto auto;
+      margin-bottom: 0px;
+    }
+
+    #goal {
+      padding: 20px 0px;
+    }
+
+    #tool {
+      width: 90%;
+      margin: auto auto;
+      padding: 10px 10px;
+      text-align: center;
+    }
+
+    .tool-navbar {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .tool-navbar a {
+      color: rgb(32, 32, 32);
+      margin: 20px 60px;
+      font-size: 30px;
+    }
+
+    .form-content {
+      width: 60%;
+      margin: 0px auto;
+      text-align: left;
+    }
+
+
+    .form-content button#donate {
+      margin-left: 0px;
+    }
+
+
+    /* styles.css */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control , .form-content input[type='text'] , .form-content input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #252525;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    
+}
+
+.form-control:focus {
+    border-color: #007bff;
+}
+
+.file-input {
+    border: 2px solid #252525;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
 
     @media screen and (max-width: 900px) {
       .navbar-links,
@@ -558,9 +664,10 @@
       }
 
       .mobile-drawer {
+        display: none;
         position: fixed;
         top: 0;
-        left: -400px;
+        left: 0px;
         width: 100%;
         height: 100%;
         background-color: #ffffff;
@@ -569,6 +676,7 @@
       }
 
       .mobile-drawer.open {
+        display: block;
         left: 0px;
       }
 
@@ -628,6 +736,9 @@
       .tip-box {
         width: 95%;
       }
+      .tip-box-preview {
+        width: 90%;
+      }
 
       h1 {
         font-size: 40px;
@@ -638,20 +749,23 @@
         font-size: 30px;
       }
 
-      .equipment-flex {
+      .equipment-flex , .equipment-flex-preview {
         width: 90%;
         justify-content: left;
       }
 
 
-      .equipment-flex a {
-        width: auto;
+      .equipment-flex a , .equipment-flex-preview a {
         font-size: 30px;
       }
-      .equipment-flex img {
-        width: 45%;
+      .equipment-flex img , .equipment-flex-preview img{
+        width: 40%;
         height: auto;
-        margin-right: 50px;
+        margin-right: 10px;
+      }
+      .equipment-flex-preview img {
+        width: 100%;
+        margin-left: 0px;
       }
 
       .price-flex {
@@ -754,6 +868,7 @@
       line-height: 40px;
       margin-bottom: 0px;
     }
+
 
 
     }
