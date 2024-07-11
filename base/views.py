@@ -14,6 +14,7 @@ from django.contrib import messages
 
 from .models import CreatorGoal , SupporterInteraction
 from .forms import DonateForm , CreateGoalForm
+from customauth.forms import CustomUserForm
 
 from decimal import *
 import requests , json
@@ -33,7 +34,7 @@ class CreatorLogin(LoginView):
         return reverse_lazy("home")
     
 class CreatorSignup(FormView):
-    form_class = UserCreationForm
+    form_class = CustomUserForm
     template_name = 'base/signup.html'
     success_url = reverse_lazy("home")
 

@@ -46,8 +46,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
-    'paypal.standard.ipn'
+    'paypal.standard.ipn',
+    'customauth.apps.CustomauthConfig'
 ]
+
+AUTH_USER_MODEL = 'customauth.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -141,3 +144,8 @@ MEDIA_ROOT = '/images/'
 
 
 LOGIN_URL = '/login/'
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+]
